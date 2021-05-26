@@ -5,6 +5,7 @@
   "homepage": "https://RainManGO.github.io/vue3-composition-admin",
   "scripts": {
     "start": "concurrently \"npm run mock\" \"npm run serve:dev\"",
+    "dev": "concurrently \"npm run mock\" \"npm run serve:dev\"",
     "serve:dev": "cross-env NODE_ENV=development dotenv -e .env.dev.serve vue-cli-service serve",
     "build:dev": "cross-env NODE_ENV=production  dotenv -e .env.dev.build vue-cli-service build",
     "serve:test": "cross-env NODE_ENV=development dotenv -e .env.test.serve vue-cli-service serve",
@@ -93,6 +94,7 @@
     "cross-env": "^7.0.3",
     "dotenv-cli": "^4.0.0",
     "eslint": "^6.7.2",
+    "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",

@@ -33,19 +33,6 @@ module.exports = {
         }
       }],
     '@typescript-eslint/no-explicit-any': 'off',
-    'space-before-function-paren': ['error', 'never'],
-    'vue/array-bracket-spacing': 'error',
-    'vue/arrow-spacing': 'error',
-    'vue/block-spacing': 'error',
-    'vue/brace-style': 'error',
-    'vue/camelcase': 'error',
-    'vue/comma-dangle': 'error',
-    'vue/component-name-in-template-casing': 'error',
-    'vue/eqeqeq': 'error',
-    'vue/key-spacing': 'error',
-    'vue/match-component-file-name': 'error',
-    'vue/object-curly-spacing': 'error',
-    'no-useless-escape': 'off',
     '@typescript-eslint/no-this-alias': [
       'error',
       {
@@ -53,8 +40,22 @@ module.exports = {
         allowedNames: ['self'] // Allow `const self = this`; `[]` by default
       }
     ],
-    'vue/attribute-hyphenation': 'off',
-    'vue/custom-event-name-casing': 'off'
+    "array-bracket-spacing": "off",
+    // allow paren-less arrow functions
+    "arrow-parens": 0,
+    // allow async-await
+    "generator-star-spacing": 0,
+    // allow end with ,
+    "comma-dangle": 0,
+    "space-before-function-paren": 0,
+    // 解决data()后空格校验
+    "indent": 0,
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": 0,
+    'vue/attribute-hyphenation': 'off'
   },
   overrides: [
     {

@@ -11,7 +11,7 @@ const WebpackBar = require('webpackbar');
 const dayjs = require('dayjs')
 const time = dayjs().format('YYYY-M-D HH:mm:ss')
 process.env.VUE_APP_UPDATE_TIME = time
-const  {
+const {
   publicPath,
   assetsDir,
   outputDir,
@@ -31,10 +31,15 @@ module.exports = {
     port: devPort,
     open: true,
     noInfo: false,
+    // overlay: {
+    //   warnings: true,
+    //   errors: true,
+    // },
+    // 改为false，关闭了eslint校验
     overlay: {
-      warnings: true,
-      errors: true,
-    },
+      warnings: false,
+      errors: false
+    }
   },
   pluginOptions: {
     'style-resources-loader': {
@@ -45,16 +50,16 @@ module.exports = {
       ]
     }
   },
-  configureWebpack(){
+  configureWebpack() {
     return {
-      resolve:{
-        alias:{
-          '@':resolve('src'),
-          '*':resolve(''),
-          'Assets':resolve('src/assets')
+      resolve: {
+        alias: {
+          '@': resolve('src'),
+          '*': resolve(''),
+          'Assets': resolve('src/assets')
         }
       },
-      module:{
+      module: {
         rules: [
           {
             test: /\.(json5?|ya?ml)$/, // target json, json5, yaml and yml files
@@ -65,9 +70,9 @@ module.exports = {
           },
         ],
       },
-      plugins:[
+      plugins: [
         new WebpackBar({
-          name:title,
+          name: title,
         })
       ]
     }

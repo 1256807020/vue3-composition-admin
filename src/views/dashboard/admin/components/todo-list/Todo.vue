@@ -5,6 +5,7 @@
  * @LastEditors: ZY
  * @LastEditTime: 2021-01-16 16:09:12
 -->
+/* eslint-disable */
 <template>
   <li
     :class="{completed: todo.done, editing: editing}"
@@ -58,10 +59,10 @@ export default defineComponent({
   props: {
     todo: {
       type: Object as PropType<TodoItem>,
-      default: {
+      default: () => ({
         text: '',
         done: false
-      }
+      })
     }
 
   },
